@@ -13,7 +13,7 @@ export const InteractiveTerminal: React.FC = () => {
     {
       command: 'welcome',
       output:
-        '⚡ Divyanshu Sharma Interactive Systems Shell v2.4\nType "help" to see available commands or click quick action pills below.',
+        '⚡ Divyanshu Sharma Interactive Systems Shell v2.4 (AIR 844 AINCAT | Agentic AI & Systems)\nType "help" to see available commands or click quick action pills below.',
     },
   ]);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -50,7 +50,7 @@ export const InteractiveTerminal: React.FC = () => {
     }
   }, [history]);
 
-  const quickCommands = ['whoami', 'projects', 'skills', 'testflight', 'liveapp', 'contact'];
+  const quickCommands = ['whoami', 'langgraph', 'myra', 'canvasflow', 'achievements', 'experience', 'skills', 'contact'];
 
   return (
     <div className="glass-card" style={{ padding: '0', overflow: 'hidden' }}>
@@ -77,7 +77,7 @@ export const InteractiveTerminal: React.FC = () => {
               marginLeft: '0.5rem',
             }}
           >
-            divyanshu@systems:~ (zsh)
+            divyanshu@agentic-systems:~ (zsh)
           </span>
         </div>
 
@@ -92,7 +92,7 @@ export const InteractiveTerminal: React.FC = () => {
           }}
         >
           <Sparkles size={12} color="#818cf8" />
-          <span>interactive shell</span>
+          <span>interactive zsh shell</span>
         </div>
       </div>
 
