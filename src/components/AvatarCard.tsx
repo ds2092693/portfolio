@@ -1,11 +1,10 @@
 import React, { useState, useRef } from 'react';
-import { Camera, Terminal, Award, ShieldCheck } from 'lucide-react';
+import { Terminal, Award, ShieldCheck, Sparkles } from 'lucide-react';
 
 export const AvatarCard: React.FC = () => {
-  const [photoUrl, setPhotoUrl] = useState<string | null>(null);
+  const [imgError, setImgError] = useState(false);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const cardRef = useRef<HTMLDivElement | null>(null);
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -22,14 +21,6 @@ export const AvatarCard: React.FC = () => {
 
   const handleMouseLeave = () => {
     setRotation({ x: 0, y: 0 });
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const url = URL.createObjectURL(file);
-      setPhotoUrl(url);
-    }
   };
 
   return (
@@ -73,7 +64,7 @@ export const AvatarCard: React.FC = () => {
           }}
         />
 
-        {/* Avatar Display Frame */}
+        {/* Permanent Profile Photo Frame */}
         <div
           style={{
             position: 'relative',
@@ -108,16 +99,19 @@ export const AvatarCard: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              boxShadow: '0 0 25px rgba(0, 0, 0, 0.7)',
             }}
           >
-            {photoUrl ? (
+            {!imgError ? (
               <img
-                src={photoUrl}
+                src="/profile.jpg"
                 alt="Divyanshu Sharma"
+                onError={() => setImgError(true)}
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
+                  objectPosition: 'center 20%',
                 }}
               />
             ) : (
@@ -149,61 +143,39 @@ export const AvatarCard: React.FC = () => {
                 >
                   DS
                 </div>
-                <div
-                  style={{
-                    marginTop: '0.4rem',
-                    fontSize: '0.72rem',
-                    color: '#94a3b8',
-                    fontFamily: 'var(--font-mono)',
-                  }}
-                >
-                  Hologram Persona
-                </div>
               </div>
             )}
           </div>
 
-          {/* Quick Photo Upload Trigger */}
-          <button
-            onClick={() => fileInputRef.current?.click()}
-            title="Upload or Change Photo"
+          {/* Live Verified SDE Badge */}
+          <div
             style={{
               position: 'absolute',
               bottom: '4px',
               right: '4px',
-              width: '38px',
-              height: '38px',
+              width: '32px',
+              height: '32px',
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, #6366f1, #06b6d4)',
+              background: '#10b981',
               border: '2px solid #090c14',
               color: '#ffffff',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              cursor: 'pointer',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
-              transition: 'transform 0.2s ease',
+              boxShadow: '0 0 12px rgba(16, 185, 129, 0.7)',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+            title="Verified Engineer"
           >
-            <Camera size={16} />
-          </button>
-          <input
-            type="file"
-            ref={fileInputRef}
-            onChange={handleFileChange}
-            accept="image/*"
-            style={{ display: 'none' }}
-          />
+            <ShieldCheck size={18} />
+          </div>
         </div>
 
         {/* Identity & Subtext */}
-        <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ffffff', marginBottom: '0.2rem' }}>
+        <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#ffffff', marginBottom: '0.2rem' }}>
           Divyanshu Sharma
         </h3>
-        <p style={{ fontSize: '0.82rem', color: 'var(--accent-secondary)', fontWeight: 600, marginBottom: '0.6rem' }}>
-          AI/ML Engineer & Systems Developer
+        <p style={{ fontSize: '0.84rem', color: 'var(--accent-secondary)', fontWeight: 600, marginBottom: '0.4rem' }}>
+          Software Development Engineer (SDE)
         </p>
         <p style={{ fontSize: '0.76rem', color: 'var(--text-muted)', marginBottom: '1.2rem', lineHeight: 1.4 }}>
           Graphic Era University • B.Tech (AI & ML) • 8.5 CGPA
@@ -266,13 +238,21 @@ export const AvatarCard: React.FC = () => {
           </div>
         </div>
 
-        {/* Upload hint */}
-        <div style={{ marginTop: '1rem', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
-          {photoUrl ? (
-            <span style={{ color: '#34d399' }}>✓ Photo active. Click camera to change.</span>
-          ) : (
-            <span>Tap camera icon to load your custom portrait photo</span>
-          )}
+        {/* Verified Profile Status */}
+        <div
+          style={{
+            marginTop: '1rem',
+            fontSize: '0.7rem',
+            color: 'var(--text-muted)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.4rem',
+            fontFamily: 'var(--font-mono)',
+          }}
+        >
+          <Sparkles size={11} color="#10b981" />
+          <span>Profile Verified • ds2092693</span>
         </div>
       </div>
 

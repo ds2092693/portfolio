@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Terminal } from 'lucide-react';
 
 interface IntroPortalProps {
   onEnter: () => void;
@@ -66,7 +66,7 @@ export const IntroPortal: React.FC<IntroPortalProps> = ({ onEnter }) => {
         onClick={(e) => e.stopPropagation()}
         style={{
           width: '100%',
-          maxWidth: '560px',
+          maxWidth: '580px',
           background: 'linear-gradient(160deg, rgba(17, 22, 35, 0.95) 0%, rgba(9, 11, 18, 0.98) 100%)',
           border: '1px solid rgba(99, 102, 241, 0.4)',
           borderRadius: '24px',
@@ -79,10 +79,10 @@ export const IntroPortal: React.FC<IntroPortalProps> = ({ onEnter }) => {
         }}
       >
         {/* Animated Corner Brackets */}
-        <div style={{ position: 'absolute', top: 12, left: 14, color: '#6366f1', fontFamily: 'monospace', fontSize: '0.8rem' }}>┌</div>
-        <div style={{ position: 'absolute', top: 12, right: 14, color: '#6366f1', fontFamily: 'monospace', fontSize: '0.8rem' }}>┐</div>
-        <div style={{ position: 'absolute', bottom: 12, left: 14, color: '#6366f1', fontFamily: 'monospace', fontSize: '0.8rem' }}>└</div>
-        <div style={{ position: 'absolute', bottom: 12, right: 14, color: '#6366f1', fontFamily: 'monospace', fontSize: '0.8rem' }}>┘</div>
+        <div style={{ position: 'absolute', top: 12, left: 14, color: '#6366f1', fontFamily: 'monospace', fontSize: '0.85rem' }}>┌</div>
+        <div style={{ position: 'absolute', top: 12, right: 14, color: '#6366f1', fontFamily: 'monospace', fontSize: '0.85rem' }}>┐</div>
+        <div style={{ position: 'absolute', bottom: 12, left: 14, color: '#6366f1', fontFamily: 'monospace', fontSize: '0.85rem' }}>└</div>
+        <div style={{ position: 'absolute', bottom: 12, right: 14, color: '#6366f1', fontFamily: 'monospace', fontSize: '0.85rem' }}>┘</div>
 
         {/* Ambient Top Glow Beacon */}
         <div
@@ -158,7 +158,7 @@ export const IntroPortal: React.FC<IntroPortalProps> = ({ onEnter }) => {
             color: '#a5b4fc',
             fontSize: '0.74rem',
             fontFamily: 'var(--font-mono)',
-            marginBottom: '1rem',
+            marginBottom: '1.1rem',
           }}
         >
           <span
@@ -173,26 +173,65 @@ export const IntroPortal: React.FC<IntroPortalProps> = ({ onEnter }) => {
           SYSTEM READY • SECURE SDE WORKSPACE
         </div>
 
-        {/* Powerful Quote */}
-        <h2
+        {/* Iconic Software Engineering Quote Box */}
+        <div
           style={{
-            fontSize: 'clamp(1.25rem, 3.2vw, 1.7rem)',
-            fontWeight: 800,
-            lineHeight: 1.3,
-            color: '#ffffff',
-            letterSpacing: '-0.02em',
-            marginBottom: '0.9rem',
+            background: 'rgba(0, 0, 0, 0.35)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+            borderRadius: '16px',
+            padding: '1.2rem 1.4rem',
+            marginBottom: '1.4rem',
+            position: 'relative',
           }}
         >
-          "Building fault-tolerant concurrency, scalable systems, and intelligent platforms."
-        </h2>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.4rem',
+              color: 'var(--text-muted)',
+              fontSize: '0.72rem',
+              fontFamily: 'var(--font-mono)',
+              marginBottom: '0.5rem',
+            }}
+          >
+            <Terminal size={12} color="#06b6d4" />
+            <span>ENGINEERING MANIFESTO</span>
+          </div>
+
+          <blockquote
+            style={{
+              fontSize: 'clamp(1.15rem, 2.6vw, 1.45rem)',
+              fontWeight: 700,
+              lineHeight: 1.35,
+              color: '#ffffff',
+              letterSpacing: '-0.02em',
+              marginBottom: '0.5rem',
+              fontStyle: 'italic',
+            }}
+          >
+            “Talk is cheap. Show me the code.”
+          </blockquote>
+
+          <div
+            style={{
+              fontSize: '0.82rem',
+              color: 'var(--accent-secondary)',
+              fontWeight: 600,
+              fontFamily: 'var(--font-mono)',
+            }}
+          >
+            — Linus Torvalds, Creator of Linux & Git
+          </div>
+        </div>
 
         <p
           style={{
-            fontSize: '0.88rem',
+            fontSize: '0.86rem',
             color: 'var(--text-secondary)',
-            lineHeight: 1.6,
-            marginBottom: '1.6rem',
+            lineHeight: 1.55,
+            marginBottom: '1.4rem',
             maxWidth: '460px',
             marginRight: 'auto',
             marginLeft: 'auto',
@@ -200,8 +239,8 @@ export const IntroPortal: React.FC<IntroPortalProps> = ({ onEnter }) => {
         >
           <strong style={{ color: '#ffffff' }}>Divyanshu Sharma</strong> — Software Development Engineer (SDE)
           <br />
-          <span style={{ color: 'var(--accent-secondary)', fontSize: '0.82rem', fontFamily: 'var(--font-mono)' }}>
-            AIR 844 AINCAT • 400+ DSA • Infosys & Apple Cohort
+          <span style={{ color: '#94a3b8', fontSize: '0.78rem' }}>
+            Building fault-tolerant concurrency, real-time distributed sync & AI platforms.
           </span>
         </p>
 
