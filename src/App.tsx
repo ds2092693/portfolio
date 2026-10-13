@@ -99,39 +99,32 @@ export function App() {
         {/* Hero Section */}
         <section
           style={{
-            paddingTop: '8.5rem',
-            paddingBottom: '5rem',
+            paddingTop: 'clamp(6rem, 12vw, 8.5rem)',
+            paddingBottom: 'clamp(2.5rem, 6vw, 4.5rem)',
             position: 'relative',
             zIndex: 1,
           }}
         >
           <div className="container">
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                alignItems: 'center',
-                gap: '3.5rem',
-              }}
-            >
+            <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', alignItems: 'center', gap: '3rem' }}>
               {/* Left Column: SDE Bio & Credentials */}
               <div>
                 {/* SDE Availability Status Pill */}
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.2rem' }}>
-                  <span className="badge badge-emerald" style={{ padding: '0.4rem 0.9rem', fontSize: '0.82rem' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+                  <span className="badge badge-emerald" style={{ padding: '0.35rem 0.8rem', fontSize: '0.78rem' }}>
                     <span className="pulse-dot" />
-                    <span>Software Development Engineer (SDE) • Available for 2026 Roles</span>
+                    <span>SDE • Available for 2026 Roles</span>
                   </span>
                 </div>
 
                 {/* SDE-Focused Headline */}
                 <h1
                   style={{
-                    fontSize: 'clamp(2.3rem, 5vw, 3.8rem)',
+                    fontSize: 'clamp(2rem, 5.2vw, 3.6rem)',
                     fontWeight: 800,
-                    lineHeight: 1.1,
+                    lineHeight: 1.12,
                     letterSpacing: '-0.03em',
-                    marginBottom: '1.2rem',
+                    marginBottom: '1rem',
                   }}
                 >
                   Building <span className="gradient-text">Distributed Systems</span>, Concurrency &{' '}
@@ -141,80 +134,81 @@ export function App() {
                 {/* Bio explicitly tailored for SDE & Systems */}
                 <p
                   style={{
-                    fontSize: 'clamp(0.95rem, 1.8vw, 1.12rem)',
+                    fontSize: 'clamp(0.92rem, 1.8vw, 1.08rem)',
                     color: 'var(--text-secondary)',
-                    lineHeight: 1.65,
-                    marginBottom: '2rem',
+                    lineHeight: 1.6,
+                    marginBottom: '1.8rem',
                   }}
                 >
-                  Hi, I'm <strong style={{ color: '#ffffff' }}>Divyanshu Sharma</strong> — an SDE with a versatile engineering
-                  mindset across <span style={{ color: '#a5b4fc' }}>Distributed Concurrency</span> (Infosys Intern, 12+ database race conditions mitigated),{' '}
+                  Hi, I'm <strong style={{ color: '#ffffff' }}>Divyanshu Sharma</strong> — an SDE with strong foundations in{' '}
+                  <span style={{ color: '#a5b4fc' }}>Distributed Concurrency</span> (Infosys Intern, 12+ database race conditions mitigated),{' '}
                   <span style={{ color: '#67e8f9' }}>Algorithmic Problem Solving</span> (AIR 844 AINCAT, 400+ DSA solved),{' '}
                   <span style={{ color: '#34d399' }}>Native iOS</span> (Swift, Apple & Infosys Training Cohort), and{' '}
-                  <span style={{ color: '#f59e0b' }}>Agentic AI State Machines</span> (LangGraph, RAG, CI/CD Guardrails).
+                  <span style={{ color: '#f59e0b' }}>Agentic State Machines</span> (LangGraph, RAG, CI/CD Guardrails).
                 </p>
 
                 {/* Action Buttons */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginBottom: '2.5rem' }}>
+                <div className="hero-cta-wrapper" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.65rem', marginBottom: '2.2rem' }}>
                   <a href="#projects" className="btn-primary">
-                    <Code2 size={16} />
+                    <Code2 size={15} />
                     <span>Explore SDE Projects</span>
-                    <ArrowRight size={15} />
+                    <ArrowRight size={14} />
                   </a>
 
                   <a href="#agent-simulator" className="btn-secondary">
-                    <Sparkles size={14} color="#818cf8" />
-                    <span>Agent State Visualizer</span>
+                    <Sparkles size={13} color="#818cf8" />
+                    <span>Agent Simulator</span>
                   </a>
 
                   <button onClick={copyEmail} className="btn-secondary">
-                    <Mail size={14} />
+                    <Mail size={13} />
                     <span>ds2092693@gmail.com</span>
                   </button>
                 </div>
 
-                {/* Verified Achievements Quick-Ticker */}
+                {/* Verified Achievements Grid */}
                 <div
+                  className="hero-stats-grid"
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
-                    gap: '0.75rem',
-                    paddingTop: '1.2rem',
+                    gridTemplateColumns: 'repeat(4, 1fr)',
+                    gap: '0.6rem',
+                    paddingTop: '1rem',
                     borderTop: '1px solid rgba(255, 255, 255, 0.08)',
                   }}
                 >
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <span style={{ fontSize: '1.35rem', fontWeight: 800, color: '#f59e0b', fontFamily: 'var(--font-mono)' }}>
+                    <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#f59e0b', fontFamily: 'var(--font-mono)' }}>
                       AIR 844
                     </span>
-                    <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>AINCAT 2025 Rank</span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>AINCAT 2025</span>
                   </div>
 
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <span style={{ fontSize: '1.35rem', fontWeight: 800, color: '#10b981', fontFamily: 'var(--font-mono)' }}>
+                    <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#10b981', fontFamily: 'var(--font-mono)' }}>
                       400+
                     </span>
-                    <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>DSA Solved (LeetCode/TUF)</span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>DSA Solved</span>
                   </div>
 
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <span style={{ fontSize: '1.35rem', fontWeight: 800, color: '#6366f1', fontFamily: 'var(--font-mono)' }}>
+                    <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#6366f1', fontFamily: 'var(--font-mono)' }}>
                       Top 100
                     </span>
-                    <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>/ 5k+ Apple Cohort</span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>/ 5k+ Apple Cohort</span>
                   </div>
 
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <span style={{ fontSize: '1.35rem', fontWeight: 800, color: '#06b6d4', fontFamily: 'var(--font-mono)' }}>
+                    <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#06b6d4', fontFamily: 'var(--font-mono)' }}>
                       8.5 CGPA
                     </span>
-                    <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>Graphic Era University</span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Graphic Era Univ</span>
                   </div>
                 </div>
               </div>
 
               {/* Right Column: Interactive 3D Avatar Card */}
-              <div>
+              <div className="hero-avatar-wrapper">
                 <AvatarCard />
               </div>
             </div>
@@ -222,43 +216,43 @@ export function App() {
         </section>
 
         {/* Interactive Agentic Visualizer Section */}
-        <section style={{ padding: '3.5rem 0', position: 'relative', zIndex: 1 }}>
+        <section style={{ padding: 'clamp(2.5rem, 5vw, 3.5rem) 0', position: 'relative', zIndex: 1 }}>
           <div className="container">
             <AgentVisualizer />
           </div>
         </section>
 
         {/* Featured Projects Section */}
-        <section id="projects" style={{ padding: '4.5rem 0', position: 'relative', zIndex: 1 }}>
+        <section id="projects" style={{ padding: 'clamp(3rem, 6vw, 4.5rem) 0', position: 'relative', zIndex: 1 }}>
           <div className="container">
             {/* Header */}
             <div
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '0.5rem',
-                marginBottom: '2rem',
+                gap: '0.4rem',
+                marginBottom: '1.8rem',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <span className="badge badge-indigo">
-                  <Layers size={13} />
+                  <Layers size={12} />
                   SDE Project Portfolio
                 </span>
-                <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
-                  Production Systems & Architecture
+                <span style={{ fontSize: '0.76rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
+                  Production Systems
                 </span>
               </div>
               <h2
                 style={{
-                  fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)',
+                  fontSize: 'clamp(1.6rem, 4vw, 2.4rem)',
                   fontWeight: 800,
                   letterSpacing: '-0.02em',
                 }}
               >
                 Featured Engineering Projects
               </h2>
-              <p style={{ color: 'var(--text-secondary)', maxWidth: '640px', fontSize: '0.95rem' }}>
+              <p style={{ color: 'var(--text-secondary)', maxWidth: '640px', fontSize: '0.92rem' }}>
                 Real-world implementations spanning distributed real-time CRDT engines, autonomous LangGraph state machines, native Swift iOS applications, and platform security.
               </p>
             </div>
@@ -268,8 +262,8 @@ export function App() {
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '0.5rem',
-                marginBottom: '2.5rem',
+                gap: '0.45rem',
+                marginBottom: '2rem',
               }}
             >
               {categories.map((cat) => (
@@ -277,9 +271,9 @@ export function App() {
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   style={{
-                    padding: '0.45rem 1rem',
+                    padding: '0.4rem 0.85rem',
                     borderRadius: 'var(--radius-full)',
-                    fontSize: '0.84rem',
+                    fontSize: '0.8rem',
                     fontWeight: 600,
                     cursor: 'pointer',
                     transition: 'all var(--transition-fast)',
@@ -300,8 +294,8 @@ export function App() {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-                gap: '1.8rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(285px, 1fr))',
+                gap: '1.4rem',
               }}
             >
               {filteredProjects.map((project) => (
@@ -312,23 +306,23 @@ export function App() {
         </section>
 
         {/* Technical Skills Matrix */}
-        <section id="skills" style={{ padding: '4.5rem 0', position: 'relative', zIndex: 1 }}>
+        <section id="skills" style={{ padding: 'clamp(3rem, 6vw, 4.5rem) 0', position: 'relative', zIndex: 1 }}>
           <div className="container">
-            <div style={{ marginBottom: '2.5rem' }}>
-              <span className="badge badge-cyan" style={{ marginBottom: '0.6rem' }}>
-                <Cpu size={13} />
+            <div style={{ marginBottom: '2rem' }}>
+              <span className="badge badge-cyan" style={{ marginBottom: '0.5rem' }}>
+                <Cpu size={12} />
                 Core SDE Competencies
               </span>
               <h2
                 style={{
-                  fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)',
+                  fontSize: 'clamp(1.6rem, 4vw, 2.4rem)',
                   fontWeight: 800,
                   letterSpacing: '-0.02em',
                 }}
               >
                 Technical Expertise & Frameworks
               </h2>
-              <p style={{ color: 'var(--text-secondary)', maxWidth: '640px', fontSize: '0.95rem' }}>
+              <p style={{ color: 'var(--text-secondary)', maxWidth: '640px', fontSize: '0.92rem' }}>
                 Comprehensive software engineering toolkit spanning Data Structures, Systems, Concurrency, Native iOS, and Agentic AI.
               </p>
             </div>
@@ -337,7 +331,7 @@ export function App() {
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                gap: '1.5rem',
+                gap: '1.25rem',
               }}
             >
               {portfolioData.skills.map((skillGroup) => (
@@ -345,7 +339,7 @@ export function App() {
                   key={skillGroup.category}
                   className="glass-card"
                   style={{
-                    padding: '1.8rem',
+                    padding: '1.4rem',
                     borderTop: `3px solid ${skillGroup.color}`,
                   }}
                 >
@@ -353,14 +347,14 @@ export function App() {
                     style={{
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '0.6rem',
-                      marginBottom: '1.2rem',
+                      gap: '0.55rem',
+                      marginBottom: '1rem',
                     }}
                   >
                     <div
                       style={{
-                        width: '32px',
-                        height: '32px',
+                        width: '30px',
+                        height: '30px',
                         borderRadius: '8px',
                         background: `${skillGroup.color}1a`,
                         display: 'flex',
@@ -369,21 +363,21 @@ export function App() {
                         color: skillGroup.color,
                       }}
                     >
-                      <Zap size={16} />
+                      <Zap size={15} />
                     </div>
-                    <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#ffffff' }}>
+                    <h3 style={{ fontSize: '0.98rem', fontWeight: 700, color: '#ffffff' }}>
                       {skillGroup.category}
                     </h3>
                   </div>
 
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                     {skillGroup.items.map((item) => (
                       <span
                         key={item}
                         style={{
-                          fontSize: '0.8rem',
+                          fontSize: '0.76rem',
                           fontFamily: 'var(--font-mono)',
-                          padding: '0.3rem 0.65rem',
+                          padding: '0.25rem 0.55rem',
                           borderRadius: '6px',
                           background: 'rgba(255, 255, 255, 0.04)',
                           color: '#cbd5e1',
@@ -412,40 +406,41 @@ export function App() {
         </section>
 
         {/* Experience & Education Section */}
-        <section id="experience" style={{ padding: '4.5rem 0', position: 'relative', zIndex: 1 }}>
+        <section id="experience" style={{ padding: 'clamp(3rem, 6vw, 4.5rem) 0', position: 'relative', zIndex: 1 }}>
           <div className="container">
-            <div style={{ marginBottom: '2.5rem' }}>
-              <span className="badge badge-emerald" style={{ marginBottom: '0.6rem' }}>
-                <Briefcase size={13} />
+            <div style={{ marginBottom: '2rem' }}>
+              <span className="badge badge-emerald" style={{ marginBottom: '0.5rem' }}>
+                <Briefcase size={12} />
                 Engineering Track Record
               </span>
               <h2
                 style={{
-                  fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)',
+                  fontSize: 'clamp(1.6rem, 4vw, 2.4rem)',
                   fontWeight: 800,
                   letterSpacing: '-0.02em',
                 }}
               >
                 Experience & Education
               </h2>
-              <p style={{ color: 'var(--text-secondary)', maxWidth: '640px', fontSize: '0.95rem' }}>
+              <p style={{ color: 'var(--text-secondary)', maxWidth: '640px', fontSize: '0.92rem' }}>
                 Track record at Infosys, Apple & Infosys Engineering Cohort, and Graphic Era University.
               </p>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               {portfolioData.experience.map((exp, idx) => (
                 <div
                   key={idx}
                   className="glass-card"
                   style={{
-                    padding: '2rem',
+                    padding: 'clamp(1.25rem, 3vw, 1.8rem)',
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: '1rem',
+                    gap: '0.9rem',
                   }}
                 >
                   <div
+                    className="exp-card-header"
                     style={{
                       display: 'flex',
                       flexWrap: 'wrap',
@@ -455,25 +450,25 @@ export function App() {
                     }}
                   >
                     <div>
-                      <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#ffffff' }}>
+                      <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#ffffff' }}>
                         {exp.role}
                       </h3>
-                      <div style={{ color: 'var(--accent-secondary)', fontWeight: 600, fontSize: '0.95rem' }}>
+                      <div style={{ color: 'var(--accent-secondary)', fontWeight: 600, fontSize: '0.9rem' }}>
                         {exp.company}
                       </div>
                     </div>
 
-                    <div style={{ textAlign: 'right' }}>
+                    <div className="exp-card-meta" style={{ textAlign: 'right' }}>
                       <div
                         style={{
                           fontFamily: 'var(--font-mono)',
-                          fontSize: '0.82rem',
+                          fontSize: '0.78rem',
                           color: 'var(--text-muted)',
                         }}
                       >
                         {exp.period}
                       </div>
-                      <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>{exp.location}</div>
+                      <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>{exp.location}</div>
                     </div>
                   </div>
 
@@ -485,7 +480,7 @@ export function App() {
                       margin: 0,
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '0.55rem',
+                      gap: '0.45rem',
                     }}
                   >
                     {exp.highlights.map((h, i) => (
@@ -494,14 +489,14 @@ export function App() {
                         style={{
                           display: 'flex',
                           alignItems: 'flex-start',
-                          gap: '0.6rem',
-                          fontSize: '0.88rem',
+                          gap: '0.55rem',
+                          fontSize: '0.84rem',
                           color: '#cbd5e1',
-                          lineHeight: '1.55',
+                          lineHeight: '1.5',
                         }}
                       >
                         <CheckCircle2
-                          size={15}
+                          size={14}
                           color="#10b981"
                           style={{ marginTop: '3px', flexShrink: 0 }}
                         />
@@ -515,8 +510,8 @@ export function App() {
                     style={{
                       display: 'flex',
                       flexWrap: 'wrap',
-                      gap: '0.4rem',
-                      paddingTop: '0.6rem',
+                      gap: '0.35rem',
+                      paddingTop: '0.5rem',
                       borderTop: '1px solid rgba(255, 255, 255, 0.06)',
                     }}
                   >
@@ -524,9 +519,9 @@ export function App() {
                       <span
                         key={s}
                         style={{
-                          fontSize: '0.74rem',
+                          fontSize: '0.72rem',
                           fontFamily: 'var(--font-mono)',
-                          padding: '0.18rem 0.55rem',
+                          padding: '0.15rem 0.5rem',
                           borderRadius: '4px',
                           background: 'rgba(255, 255, 255, 0.04)',
                           color: 'var(--text-secondary)',
@@ -543,23 +538,23 @@ export function App() {
         </section>
 
         {/* Interactive CLI Terminal Section */}
-        <section id="terminal" style={{ padding: '4.5rem 0', position: 'relative', zIndex: 1 }}>
+        <section id="terminal" style={{ padding: 'clamp(3rem, 6vw, 4.5rem) 0', position: 'relative', zIndex: 1 }}>
           <div className="container">
-            <div style={{ marginBottom: '2rem' }}>
-              <span className="badge badge-orange" style={{ marginBottom: '0.6rem' }}>
-                <Terminal size={13} />
+            <div style={{ marginBottom: '1.6rem' }}>
+              <span className="badge badge-orange" style={{ marginBottom: '0.5rem' }}>
+                <Terminal size={12} />
                 Developer CLI
               </span>
               <h2
                 style={{
-                  fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)',
+                  fontSize: 'clamp(1.6rem, 4vw, 2.4rem)',
                   fontWeight: 800,
                   letterSpacing: '-0.02em',
                 }}
               >
                 Interactive SDE Command Console
               </h2>
-              <p style={{ color: 'var(--text-secondary)', maxWidth: '640px', fontSize: '0.95rem' }}>
+              <p style={{ color: 'var(--text-secondary)', maxWidth: '640px', fontSize: '0.92rem' }}>
                 Query my background, run simulated agent pipelines, and inspect project architecture straight from the terminal.
               </p>
             </div>
@@ -571,11 +566,11 @@ export function App() {
         {/* Footer & Direct Contact */}
         <footer
           style={{
-            padding: '4rem 0 2rem 0',
+            padding: '3rem 0 1.5rem 0',
             position: 'relative',
             zIndex: 1,
             borderTop: '1px solid var(--border-subtle)',
-            marginTop: '4rem',
+            marginTop: '3.5rem',
           }}
         >
           <div className="container">
@@ -585,28 +580,28 @@ export function App() {
                 flexWrap: 'wrap',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                gap: '1.5rem',
-                marginBottom: '2.5rem',
+                gap: '1.25rem',
+                marginBottom: '2rem',
               }}
             >
               <div>
-                <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ffffff', marginBottom: '0.3rem' }}>
+                <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', marginBottom: '0.2rem' }}>
                   Divyanshu Sharma
                 </div>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.82rem' }}>
                   Software Development Engineer (SDE) • AIR 844 AINCAT • Dehradun, India
                 </p>
               </div>
 
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem' }}>
-                <button onClick={copyEmail} className="btn-secondary" style={{ fontSize: '0.84rem' }}>
-                  <Mail size={14} />
-                  <span>Email: ds2092693@gmail.com</span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.65rem' }}>
+                <button onClick={copyEmail} className="btn-secondary" style={{ fontSize: '0.8rem', padding: '0.45rem 0.85rem' }}>
+                  <Mail size={13} />
+                  <span>Email</span>
                 </button>
 
-                <button onClick={copyPhone} className="btn-secondary" style={{ fontSize: '0.84rem' }}>
-                  <Phone size={14} />
-                  <span>+91 6398232031</span>
+                <button onClick={copyPhone} className="btn-secondary" style={{ fontSize: '0.8rem', padding: '0.45rem 0.85rem' }}>
+                  <Phone size={13} />
+                  <span>Call</span>
                 </button>
 
                 <a
@@ -614,9 +609,9 @@ export function App() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary"
-                  style={{ fontSize: '0.84rem' }}
+                  style={{ fontSize: '0.8rem', padding: '0.45rem 0.85rem' }}
                 >
-                  <GithubIcon size={14} />
+                  <GithubIcon size={13} />
                   <span>GitHub</span>
                 </a>
 
@@ -625,9 +620,9 @@ export function App() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary"
-                  style={{ fontSize: '0.84rem' }}
+                  style={{ fontSize: '0.8rem', padding: '0.45rem 0.85rem' }}
                 >
-                  <LinkedinIcon size={14} />
+                  <LinkedinIcon size={13} />
                   <span>LinkedIn</span>
                 </a>
               </div>
@@ -636,12 +631,12 @@ export function App() {
             <div
               style={{
                 textAlign: 'center',
-                fontSize: '0.8rem',
+                fontSize: '0.76rem',
                 color: 'var(--text-muted)',
                 fontFamily: 'var(--font-mono)',
               }}
             >
-              © 2026 Divyanshu Sharma. SDE Portfolio. Built with React 19, TypeScript, & Vite. Deployed on Vercel.
+              © 2026 Divyanshu Sharma. Built with React 19, TypeScript, & Vite. Deployed on Vercel.
             </div>
           </div>
         </footer>
@@ -651,25 +646,29 @@ export function App() {
           <div
             style={{
               position: 'fixed',
-              bottom: '24px',
-              right: '24px',
+              bottom: '20px',
+              right: '20px',
+              left: '20px',
+              maxWidth: '360px',
+              margin: '0 auto',
               background: 'rgba(15, 23, 42, 0.95)',
               backdropFilter: 'blur(16px)',
               border: '1px solid var(--accent-primary)',
               color: '#ffffff',
-              padding: '0.8rem 1.4rem',
+              padding: '0.75rem 1.2rem',
               borderRadius: 'var(--radius-full)',
-              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-primary-glow)',
-              fontSize: '0.88rem',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-primary-glow)',
+              fontSize: '0.84rem',
               fontWeight: 500,
               zIndex: 100,
               display: 'flex',
               alignItems: 'center',
-              gap: '0.6rem',
+              justifyContent: 'center',
+              gap: '0.5rem',
               animation: 'fadeIn 0.2s ease',
             }}
           >
-            <Check size={16} color="#34d399" />
+            <Check size={15} color="#34d399" />
             <span>{toastMessage}</span>
           </div>
         )}
