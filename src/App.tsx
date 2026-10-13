@@ -616,7 +616,7 @@ export function App() {
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/divyanshu-sharma"
+                  href="https://www.linkedin.com/in/divyanshu-sharma-899267297/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary"

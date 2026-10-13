@@ -26,7 +26,7 @@ export const portfolioData = {
     email: 'ds2092693@gmail.com',
     phone: '+91 6398232031',
     github: 'https://github.com/ds2092693',
-    linkedin: 'https://www.linkedin.com/in/divyanshu-sharma',
+    linkedin: 'https://www.linkedin.com/in/divyanshu-sharma-899267297/',
     location: 'Dehradun, India',
     status: 'Available for Software & Agentic AI Roles',
     cgpa: '8.5 / 10.0 CGPA',
