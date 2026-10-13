@@ -428,3 +428,14 @@ body {
     height: 130px !important;
   }
 }
+
+/* Force Hero Grid top-alignment so Avatar Card sits high and level with Headline */
+.hero-grid {
+  align-items: flex-start !important;
+}
+
+.hero-avatar-wrapper {
+  align-self: flex-start !important;
+  display: flex !important;
+  justify-content: center !important;
+}

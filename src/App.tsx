@@ -106,11 +106,11 @@ export function App() {
           }}
         >
           <div className="container">
-            <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', alignItems: 'center', gap: '3rem' }}>
+            <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', alignItems: 'flex-start', gap: '3rem' }}>
               {/* Left Column: SDE Bio & Credentials */}
               <div>
                 {/* SDE Availability Status Pill */}
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'flex-start', gap: '0.5rem', marginBottom: '1rem' }}>
                   <span className="badge badge-emerald" style={{ padding: '0.35rem 0.8rem', fontSize: '0.78rem' }}>
                     <span className="pulse-dot" />
                     <span>SDE • Available for 2026 Roles</span>
@@ -234,7 +234,7 @@ export function App() {
                 marginBottom: '1.8rem',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
                 <span className="badge badge-indigo">
                   <Layers size={12} />
                   SDE Project Portfolio
@@ -346,7 +346,7 @@ export function App() {
                   <div
                     style={{
                       display: 'flex',
-                      alignItems: 'center',
+                      alignItems: 'flex-start',
                       gap: '0.55rem',
                       marginBottom: '1rem',
                     }}
@@ -358,7 +358,7 @@ export function App() {
                         borderRadius: '8px',
                         background: `${skillGroup.color}1a`,
                         display: 'flex',
-                        alignItems: 'center',
+                        alignItems: 'flex-start',
                         justifyContent: 'center',
                         color: skillGroup.color,
                       }}
@@ -444,7 +444,7 @@ export function App() {
                     style={{
                       display: 'flex',
                       flexWrap: 'wrap',
-                      alignItems: 'center',
+                      alignItems: 'flex-start',
                       justifyContent: 'space-between',
                       gap: '0.5rem',
                     }}
@@ -579,7 +579,7 @@ export function App() {
                 display: 'flex',
                 flexWrap: 'wrap',
                 justifyContent: 'space-between',
-                alignItems: 'center',
+                alignItems: 'flex-start',
                 gap: '1.25rem',
                 marginBottom: '2rem',
               }}
@@ -662,7 +662,7 @@ export function App() {
               fontWeight: 500,
               zIndex: 100,
               display: 'flex',
-              alignItems: 'center',
+              alignItems: 'flex-start',
               justifyContent: 'center',
               gap: '0.5rem',
               animation: 'fadeIn 0.2s ease',
